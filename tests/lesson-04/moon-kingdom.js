@@ -4,15 +4,22 @@ function createCharacters() {
     { name: "Luigi", level: 40, health: 500 },
     { name: "Peach", level: 20, health: 150 },
   ];
-  let charactersPowerUp = characters.map((character) => {
-    name: character.name.toUpperCase();
-    level: character.level * 2;
-    health: character.health * 3;
+  const charactersPowerUp = characters.map((character) => {
+    return {
+      name: character.name.toUpperCase(),
+      level: character.level * 2,
+      health: character.health * 3,
+    };
   });
-  let possibleWinners = charactersPowerUp.filter(
-    (character) => character.health > 1000,
-  );
+  const possibleWinners = charactersPowerUp.filter((character) => {
+    return character.health > 1000;
+  });
+
+  console.log(charactersPowerUp);
+  console.log(possibleWinners);
 }
+
+createCharacters();
 
 const players = [
   { name: "Mario", score: 1000 },
